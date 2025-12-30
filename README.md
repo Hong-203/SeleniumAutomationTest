@@ -14,7 +14,7 @@ Dự án kiểm thử tự động (Automation Testing) cho hệ thống đặt 
 
 ---
 
-## 📊 Automation Coverage (40%+)
+## 📊 Automation Coverage
 Framework đã bao phủ các luồng nghiệp vụ quan trọng (Critical Path) để đảm bảo hệ thống vận hành ổn định:
 
 | STT | Test Case | Phân tích & Kỹ thuật xử lý |

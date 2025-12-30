@@ -1,4 +1,4 @@
-# 🎬 Selenium Automation Framework - Movie Booking System
+# 🎬 Selenium Automation Framework
 
 Dự án kiểm thử tự động (Automation Testing) cho hệ thống đặt vé xem phim CyberSoft. Framework được xây dựng dựa trên tiêu chuẩn chuyên nghiệp, dễ bảo trì và mở rộng.
 

@@ -47,7 +47,7 @@ public class Login01_Verify_Login_Successfully extends BaseTest {
 
         //Step 4: Enter password
         loginPage.enterPassword("Soi@123a");
-
+        loginPage.clickRemember();
         //Step 5: Click 'Dang Nhap' button
         loginPage.clickLogin();
 

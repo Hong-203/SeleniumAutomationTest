@@ -5,11 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 
 public class LoginPage {
-
     private WebDriver driver;
 
     private By byTxtAccountLogin = By.id("taiKhoan");
@@ -21,15 +19,38 @@ public class LoginPage {
         this.driver = driver;
     }
 
+    // --- Các hàm kiểm tra thuộc tính (Bổ sung cho Test Case UI/SEC) ---
+
+    public boolean isAccountInputDisplayed() {
+        return driver.findElement(byTxtAccountLogin).isDisplayed();
+    }
+
+    public boolean isPasswordInputDisplayed() {
+        return driver.findElement(byTxtPasswordLogin).isDisplayed();
+    }
+
+    public boolean isRememberCheckboxDisplayed() {
+        return driver.findElement(byChkRemember).isDisplayed();
+    }
+
+    public String getPasswordInputType() {
+        // Trả về "password" nếu đang ẩn dấu chấm (TC_LOGIN_SEC_01)
+        return driver.findElement(byTxtPasswordLogin).getAttribute("type");
+    }
+
+    // --- Các hàm hành động ---
+
     public void enterAcount(String account) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         WebElement txtAccount = wait.until(ExpectedConditions.visibilityOfElementLocated(byTxtAccountLogin));
+        txtAccount.clear(); // Xóa trước khi nhập để đảm bảo UX
         txtAccount.sendKeys(account);
     }
 
     public void enterPassword(String password) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         WebElement txtPassword = wait.until(ExpectedConditions.visibilityOfElementLocated(byTxtPasswordLogin));
+        txtPassword.clear();
         txtPassword.sendKeys(password);
     }
 

@@ -20,19 +20,14 @@ public class Booking_01_HappyPath extends BaseTest {
         driver.get("https://demo1.cybersoft.edu.vn/purchase/45056");
         BookingTicketPage bookingPage = new BookingTicketPage(driver);
 
-        Thread.sleep(5000); // Đợi 5s cho trang load ban đầu
-
-        System.out.println("Step: Chọn ghế 17");
-        bookingPage.selectSeat("17");
-        Thread.sleep(5000); // Nghỉ 5s để quan sát ghế đổi màu
+        System.out.println("Step: Chọn ghế 88");
+        bookingPage.selectSeat("88");
 
         System.out.println("Step: Click ĐẶT VÉ");
         bookingPage.clickOrder();
-        Thread.sleep(5000); // Nghỉ 5s để quan sát Popup hiện ra
 
         System.out.println("Step: Xác nhận Dialog");
         bookingPage.confirmDialog();
-        Thread.sleep(5000); // Nghỉ 5s trước khi kết thúc
 
         Assert.assertTrue(true);
     }

@@ -18,7 +18,7 @@ public class Login02_Verify_Login_Validation extends BaseTest {
     @Test(description = "Kiểm tra các trường hợp lỗi đăng nhập (TC_LOGIN_VAL)")
     public void verifyLoginValidation() {
         WebDriver driver = DriverFactory.getDriver();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
         // Mở trang và vào form đăng nhập
         driver.get("https://demo1.cybersoft.edu.vn/");

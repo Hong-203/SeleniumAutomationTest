@@ -57,12 +57,12 @@ public class Login01_Verify_Login_Successfully extends BaseTest {
         String recordedLoginMsg = dialog.getTextMessage();
         Assert.assertEquals(recordedLoginMsg, "Đăng nhập thành công", "Incorrect login message !");
 
-        //VP2: Check 'Dang xuat' link display
+        //VP2: Hiện link Đăng xuất
         By byLnkLogout = By.xpath("//a[h3[text()='Đăng xuất']]");
         WebElement lnkLogout = wait.until(ExpectedConditions.visibilityOfElementLocated(byLnkLogout));
         Assert.assertTrue(lnkLogout.isDisplayed(), "Logout out link not display !");
 
-        //VP3: Check user profile display on the top right
+        //VP3: Hiện tên user ở góc phải
         By byLblUserProfile = By.xpath("//a/h3[text()='" + fullname + "']");
         WebElement lblUserProfile = wait.until(ExpectedConditions.visibilityOfElementLocated(byLblUserProfile));
         Assert.assertTrue(lblUserProfile.isDisplayed(), "User profile not display !");

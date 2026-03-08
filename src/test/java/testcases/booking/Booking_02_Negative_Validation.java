@@ -22,12 +22,28 @@ public class Booking_02_Negative_Validation extends BaseTest {
 
         BookingTicketPage bookingPage = new BookingTicketPage(driver);
         CommonDialog dialog = new CommonDialog(driver);
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
 
         System.out.println("Step: Nhấn ĐẶT VÉ khi chưa chọn bất kỳ ghế nào");
         bookingPage.clickOrder();
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
 
         System.out.println("Verify: Thông báo nhắc nhở chọn ghế (TC_BOOK_UX_08)");
         String msg = dialog.getTextMessage();
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
         Assert.assertEquals(msg, "Bạn chưa chọn ghế. Vui lòng chọn ghế ?", "Thông báo sai hoặc không xuất hiện!");
     }
 }

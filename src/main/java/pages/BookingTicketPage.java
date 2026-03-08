@@ -20,8 +20,8 @@ public class BookingTicketPage {
     }
 
     public void selectSeat(String seatNumber) {
-        // Tăng WebDriverWait lên 15 giây
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        // Tăng WebDriverWait lên 30 giây
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         By seatLocator = By.xpath(String.format(xpathSeat, seatNumber));
 
         WebElement seatElement = wait.until(ExpectedConditions.presenceOfElementLocated(seatLocator));
@@ -35,15 +35,15 @@ public class BookingTicketPage {
     }
 
     public void clickOrder() {
-        // Đợi nút Đặt vé trong 15 giây
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(7));
+        // Đợi nút Đặt vé trong 30 giây
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         WebElement btnOrder = wait.until(ExpectedConditions.elementToBeClickable(byBtnSubmitBooking));
         btnOrder.click();
     }
 
     public void confirmDialog() {
         // Đợi Popup trong 20 giây
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         WebElement btnConfirm = wait.until(ExpectedConditions.visibilityOfElementLocated(byBtnConfirmSuccess));
         btnConfirm.click();
     }

@@ -41,27 +41,27 @@ public class LoginPage {
     // --- Các hàm hành động ---
 
     public void enterAcount(String account) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         WebElement txtAccount = wait.until(ExpectedConditions.visibilityOfElementLocated(byTxtAccountLogin));
         txtAccount.clear(); // Xóa trước khi nhập để đảm bảo UX
         txtAccount.sendKeys(account);
     }
 
     public void enterPassword(String password) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         WebElement txtPassword = wait.until(ExpectedConditions.visibilityOfElementLocated(byTxtPasswordLogin));
         txtPassword.clear();
         txtPassword.sendKeys(password);
     }
 
     public void clickLogin() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         WebElement btnLogin = wait.until(ExpectedConditions.visibilityOfElementLocated(byBtnLogin));
         btnLogin.click();
     }
 
     public void clickRemember() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         WebElement chkRemember = wait.until(ExpectedConditions.presenceOfElementLocated(byChkRemember));
         chkRemember.click();
     }

@@ -24,12 +24,10 @@ public class Register_01_HappyPath extends BaseTest {
         String pass = "Test123456@";
 
         driver.get("https://demo1.cybersoft.edu.vn/");
-        Thread.sleep(5000);
 
         // Mở Form Đăng ký
         driver.findElement(By.xpath("//a[h3[text()='Đăng Ký']]")).click();
         RegisterPage registerPage = new RegisterPage(driver);
-        Thread.sleep(5000);
 
         // Verify Password Masking (TC_REG_SEC_01)
         Assert.assertEquals(registerPage.getPasswordInputType(), "password", "Mật khẩu không được ẩn!");
@@ -40,13 +38,11 @@ public class Register_01_HappyPath extends BaseTest {
         registerPage.enterFullName("Automation Test");
         registerPage.enterEmail(email);
 
-        Thread.sleep(5000); // Demo quan sát dữ liệu đã nhập
         registerPage.clickRegister();
 
         CommonDialog dialog = new CommonDialog(driver);
         Assert.assertEquals(dialog.getTextMessage(), "Đăng ký thành công", "Lỗi thông báo đăng ký!");
         dialog.waitDialogDisappear();
-        Thread.sleep(5000);
 
         // Verify đăng nhập với tài khoản vừa tạo
         driver.findElement(By.xpath("//a[h3[text()='Đăng Nhập']]")).click();
@@ -56,6 +52,5 @@ public class Register_01_HappyPath extends BaseTest {
         loginPage.clickLogin();
 
         Assert.assertEquals(dialog.getTextMessage(), "Đăng nhập thành công", "Không thể login sau đăng ký!");
-        Thread.sleep(5000);
     }
 }

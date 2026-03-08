@@ -23,7 +23,6 @@ public class Register_02_Validation_Errors extends BaseTest {
         // --- CASE 1: Để trống tất cả (TC_REG_VAL_01) ---
         System.out.println("Check TC_REG_VAL_01: Empty fields");
         registerPage.clickRegister();
-        Thread.sleep(5000);
         // Kiểm tra thông báo dưới trường tài khoản
         Assert.assertTrue(registerPage.getFieldError("taiKhoan").contains("bắt buộc"), "Thiếu validate trống trường!");
 
@@ -33,7 +32,6 @@ public class Register_02_Validation_Errors extends BaseTest {
         registerPage.enterPassword("123456");
         registerPage.enterConfirmPassword("654321");
         registerPage.clickRegister();
-        Thread.sleep(5000);
         Assert.assertTrue(registerPage.getFieldError("confirmPassWord").contains("không khớp"), "Lỗi không khớp!");
 
         // --- CASE 3: Email đã tồn tại (TC_REG_VAL_08) ---
@@ -45,7 +43,6 @@ public class Register_02_Validation_Errors extends BaseTest {
         registerPage.enterEmail("Soi05@gmail.com"); // Email đã có trong hệ thống
         registerPage.clickRegister();
 
-        Thread.sleep(5000);
         Assert.assertEquals(dialog.getTextMessage(), "Email đã tồn tại!", "Hệ thống không chặn email trùng!");
     }
 }

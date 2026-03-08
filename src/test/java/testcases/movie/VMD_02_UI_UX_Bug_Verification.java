@@ -16,7 +16,6 @@ public class VMD_02_UI_UX_Bug_Verification extends BaseTest {
         MoviePage moviePage = new MoviePage(driver);
 
         moviePage.clickMovieDetail();
-        Thread.sleep(5000);
 
         // Kiểm tra TC_VMD_UI_03: Thiếu Header điều hướng
         System.out.println("Checking TC_VMD_UI_03: Navigation Header display");
@@ -32,7 +31,6 @@ public class VMD_02_UI_UX_Bug_Verification extends BaseTest {
             System.err.println("BUG FOUND: [TC_VMD_UI_04] Trang chi tiết phim thiếu Footer thông tin!");
         }
 
-        Thread.sleep(5000);
         // Assert để sinh Screenshot lỗi cho báo cáo
         Assert.assertTrue(hasHeader && hasFooter, "Lỗi UI: Thiếu các thành phần điều hướng cơ bản (Header/Footer)!");
     }

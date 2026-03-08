@@ -16,8 +16,6 @@ public class VCC_02_Verify_UI_Errors extends BaseTest {
         ViewCinemaCluster vcc = new ViewCinemaCluster(driver);
         vcc.clickCinemaCluster();
 
-        try { Thread.sleep(2000); } catch (InterruptedException e) {}
-
         // Kiểm tra TC_VCC_UI_04: Hệ thống chưa có tiêu đề nổi bật cho vùng cụm rạp
         System.out.println("Checking TC_VCC_UI_04: Main title 'Cụm Rạp' should be displayed");
         boolean hasMainTitle = vcc.isMainTitleDisplayed();

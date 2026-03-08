@@ -18,8 +18,6 @@ public class VCC_01_Verify_HappyPath extends BaseTest {
         System.out.println("Step: Click Cụm Rạp và kiểm tra cuộn trang (TC_VCC_UI_02)");
         vcc.clickCinemaCluster();
 
-        try { Thread.sleep(2000); } catch (InterruptedException e) {}
-
         System.out.println("Step: Kiểm tra hiển thị logo các cụm rạp (TC_VCC_UI_07)");
         Assert.assertTrue(vcc.isLogoRapDisplayed(), "Danh sách logo rạp không hiển thị!");
 

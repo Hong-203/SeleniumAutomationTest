@@ -16,7 +16,6 @@ public class VMD_03_Poster_Quality_Check extends BaseTest {
         MoviePage moviePage = new MoviePage(driver);
 
         moviePage.clickMovieDetail();
-        Thread.sleep(5000);
 
         System.out.println("Step: Lấy link ảnh poster để kiểm tra chất lượng (TC_VMD_UI_05)");
         String posterSrc = moviePage.getPosterSource();
@@ -29,7 +28,6 @@ public class VMD_03_Poster_Quality_Check extends BaseTest {
             System.err.println("BUG FOUND: [TC_VMD_UI_05] Poster phim hiển thị ảnh mặc định hoặc chất lượng thấp!");
         }
 
-        Thread.sleep(5000);
         Assert.assertFalse(isQualityBad, "Lỗi UI: Hình poster bị mờ hoặc không đúng chất lượng (MBS-42)!");
     }
 }

@@ -10,16 +10,22 @@ public class ChromeDriverManager extends DriverManager {
 
     @Override
     public void createDriver() {
+
         ChromeOptions options = new ChromeOptions();
-        //disable automation bar
+
         options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
         options.setExperimentalOption("useAutomationExtension", false);
 
-        // Disable password save dialog
         Map<String, Object> prefs = new HashMap<>();
         prefs.put("credentials_enable_service", false);
         prefs.put("profile.password_manager_enabled", false);
         options.setExperimentalOption("prefs", prefs);
+
+        // ⭐ Important for CI (Linux / GitHub Actions)
+        options.addArguments("--headless=new");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--window-size=1920,1080");
 
         this.driver = new ChromeDriver(options);
     }
